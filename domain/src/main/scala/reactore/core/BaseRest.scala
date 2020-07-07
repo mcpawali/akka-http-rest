@@ -1,6 +1,7 @@
 package reactore.core
 
 import akka.http.scaladsl.server.Directives
+import reactore.entities.{BaseEntity, BaseTable}
 
 abstract class BaseRest[T <: BaseTable[E], E <: BaseEntity](val pathName: String, repository: BaseRepositoryComponent[T, E])(implicit m: Manifest[E])
   extends Directives with JsonConverter {
